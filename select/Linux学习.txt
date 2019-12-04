@@ -1,0 +1,99 @@
+github
+Caosyz123456
+
+下载命令 wget
+解压命令 tar -xvf
+创建目录 mkdir
+
+rpm -qa | grep java
+rpm 　　管理套件    
+-qa 　　使用询问模式，查询所有套件
+grep　　查找文件里符合条件的字符串
+
+rpm -e --nodeps java-1.7.0-openjdk-headless-1.7.0.111-2.6.7.8.el7.x86_64
+rpm 　　　　管理套件  
+-e　　　　　删除指定的套件
+--nodeps　　不验证套件档的相互关联性
+
+tar -zxvf jdk-8u144-linux-x64.tar.gz
+tar　　　　　　备份文件
+-zxvf　　　　　
+-z　　　　　　 　　　　　　　　  通过gzip指令处理备份文件
+-x　　　　　　　　　　　　　　   从备份文件中还原文件
+-v　　　　　　　　　　　　　　   显示指令执行过程
+-f　　　　　　 　　　　　　　　   指定备份文件
+jdk-8u144-linux-x64.tar.gz　　　　文件名
+使环境变量生效
+source /etc/profile
+
+下载Jenkins 并安装 修改Jenkins java路径
+https://updates.jenkins-ci.org/download/plugins/ace-editor/
+
+# 查询端口是否开放
+firewall-cmd --query-port=8080/tcp
+# 开放80端口
+firewall-cmd --permanent --add-port=80/tcp
+# 移除端口
+firewall-cmd --permanent --remove-port=8080/tcp
+
+#重启防火墙(修改配置后要重启防火墙)
+firewall-cmd --reload
+
+# 参数解释
+1、firwall-cmd：是Linux提供的操作firewall的一个工具；
+2、--permanent：表示设置为持久；
+3、--add-port：标识添加的端口；
+
+netstat -anp | grep :22
+
+yum install git
+git --version
+Git默认安装在/usr/libexec/git-core
+安装源码所需要的依赖：
+yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils-MakeMaker
+cd git-2.17.0
+执行编译 make prefix=/usr/local/git all
+编译完成后安装 make prefix=/usr/local/git install
+配置git环境变量
+
+
+设置IP
+（1）bootproto=static
+（2）onboot=yes
+IPADDR=192.168.1.160
+NETMASK=255.255.255.0
+GATEWAY=192.168.1.1
+DNS1=119.29.29.29
+DNS2=8.8.8.8
+
+systemctl restart network
+查看DNS cat /etc/resolv.conf
+查看路由 ip route
+查看网关 netstat -rn
+
+查询进程
+ps -ef | grep
+
+TYPE="Ethernet"
+PROXY_METHOD="none"
+BROWSER_ONLY="no"
+BOOTPROTO="static"
+DEFROUTE="yes"
+IPV4_FAILURE_FATAL="no"
+IPV6INIT="yes"
+IPV6_AUTOCONF="yes"
+IPV6_DEFROUTE="yes"
+IPV6_FAILURE_FATAL="no"
+IPV6_ADDR_GEN_MODE="stable-privacy"
+NAME="ens33"
+UUID="23b50f43-7fc0-4029-a4f8-11bf5c1fb592"
+DEVICE="ens33"
+ONBOOT="yes"
+
+IPADDR=172.16.212.150
+NETMASK=255.255.254.0
+GATEWAY=172.16.212.1
+DNS1=172.16.200.4
+DNS2=8.8.8.8
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2qgwZ2uRxqRyOHmbCbpbJd0hNrWza/eKVVHmN3loc9b/bP6Y9jpTDzz2Mpo+6BVE6Fp3CJhvmnTgTvhs92MU94Kw5P2u0nyZuH7U5sXIFwyAmABkDsx9O2GkdI1ujuK6iDTpj0ukieZvgdhaXr8zE85Gxf+peysBcG0dm15F8zp/4dTFNOKVerabIWbJiRbYgmXMe9e71YK67iDX5Zg6dhteWZ9fRPv/3pCA+WqecGzSu7o7I1uDHnrb0Jfz7YD93emLCqFaRSy29hJZGYFlIQJl6ZYs7E+8EYtUI5HFgEVNHgOX+lC2JStteJW/0RvE9L5udtCp6P/ivmhJBGbGp caotest1234@163.com
